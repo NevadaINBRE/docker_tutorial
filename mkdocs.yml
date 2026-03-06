@@ -1,7 +1,6 @@
 site_name: Nevada Bioinformatics Center - Docker Workshop
 site_url: https://nevadainbre.github.io/docker_tutorial/
 
-# Repository Integration (Update with your actual GitHub username!)
 repo_name: NevadaINBRE/docker_tutorial
 repo_url: https://github.com/NevadaINBRE/docker_tutorial
 edit_uri: edit/main/docs/
@@ -32,6 +31,10 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.highlight:
       anchor_linenums: true
+
+extra:
+  version:
+    provider: mike
 
 nav:
   - Welcome: index.md
