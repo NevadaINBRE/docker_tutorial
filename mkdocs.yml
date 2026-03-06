@@ -1,0 +1,46 @@
+site_name: Nevada Bioinformatics Center - Docker Workshop
+site_url: https://nevadainbre.github.io/docker_tutorial/
+
+# Repository Integration (Update with your actual GitHub username!)
+repo_name: NevadaINBRE/docker_tutorial
+repo_url: https://github.com/NevadaINBRE/docker_tutorial
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  logo: images/university-logo.svg
+  favicon: images/university-logo.svg
+  palette:
+    primary: custom
+    accent: blue
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - navigation.top    
+    - navigation.footer 
+
+copyright: Copyright &copy; 2026 University of Nevada, Reno
+
+extra_css:
+  - stylesheets/custom.css
+
+markdown_extensions:
+  - admonition          
+  - pymdownx.details     
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+
+nav:
+  - Welcome: index.md
+  - Prerequisites: prerequisites.md
+  - Software Installation: installation.md
+  - Your First Container: first-container.md
+  - Data and Volumes: volumes.md 
+  - Pre-built Tools Containers: prebuilt-tools.md
+  - Building Custom Containers: dockerfiles.md
+  - Sharing Containers: dockerhub.md
+  - Instant Custom Containers (Seqera): seqera.md
+  - Workshop Wrap-up: wrapup.md
