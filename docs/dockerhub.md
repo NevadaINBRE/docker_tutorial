@@ -49,48 +49,10 @@ docker push yourusername/covid-pipeline:v1 # (1)!
 
 Congratulations! Your viral genomics pipeline is now published to the world. 
 
-You can log into any other machine in the world—a colleague's laptop, an AWS cloud instance, or the university HPC cluster—and run your exact pipeline with a single command:
+You can log into any other machine in the world (a colleague's laptop, an AWS cloud instance, or the university HPC cluster) and run your exact pipeline with a single command:
 
 ```bash
 docker run --rm -v ~/data:/data yourusername/covid-pipeline:v1 bwa mem ...
 ```
 
 By publishing your environments alongside your code and data, you ensure your scientific research is 100% reproducible.
-
-## 5. Cleaning Up
-
-Now that the workshop is complete, it is good practice to clean up our environments so we don't leave unused files and images taking up hard drive space.
-
-### Deleting the Docker Hub Repository
-For security reasons, Docker does not allow you to delete a repository directly from the command line. To remove the test image we just pushed:
-
-1. Log into [Docker Hub](https://hub.docker.com/) in your web browser.
-2. Click on **Repositories** in the top navigation bar.
-3. Click on your `covid-pipeline` repository.
-4. Click the **Settings** tab near the top right.
-5. Scroll down to the **Danger Zone** and click **Delete repository**.
-6. Type the name of the repository to confirm and delete it.
-
-### Cleaning Up Local Directories
-Let's remove the dummy data, FASTQ files, and Dockerfiles we created on our host machine during the exercises.
-
-!!! danger "Be careful with `rm -rf`!"
-    Double-check these paths before hitting Enter to ensure you don't accidentally delete important files on your system.
-
-```bash
-cd ~
-rm -rf ~/docker_data
-rm -rf ~/covid_pipeline
-rm -rf ~/covid_data
-rm -rf ~/multiqc_container
-rm -rf ~/bedtools_container
-```
-
-### Cleaning Up Docker Storage
-Finally, let's tell Docker to delete all the stopped containers, dangling build caches, and downloaded images (like the heavy `ubuntu` and `miniconda` base images) to reclaim our hard drive space.
-
-```bash
-docker system prune -a --volumes # (1)!
-```
-
-1. `-a` removes all unused images, not just dangling ones. `--volumes` removes all unused anonymous volumes. Docker will ask you to type `y` to confirm before it wipes the data.

@@ -38,7 +38,7 @@ WORKDIR /data # (4)!
 
 1. `FROM` defines the base operating system.
 2. `ENV` sets environmental variables. Here, we tell `apt` not to ask us `[Y/n]` questions that would break an automated build.
-3. `RUN` executes standard Linux commands inside the image during the build process. Notice how we clean up the downloaded package lists (`rm -rf`) in the exact same command—this is a strict Docker best practice to keep the final image size small!
+3. `RUN` executes standard Linux commands inside the image during the build process. Notice how we clean up the downloaded package lists (`rm -rf`) in the exact same command; this is a strict Docker best practice to keep the final image size small!
 4. `WORKDIR` ensures that any time we mount a volume or log into this container, we automatically start in the `/data` folder.
 
 ## 2. Building the Image
@@ -108,7 +108,7 @@ docker run --rm -v ~/covid_data:/data covid-pipeline:v1 bash -c \
   "samtools stats covid_aligned.sorted.bam > covid_aligned.stats"
 ```
 
-Check your local folder. You successfully took raw sequencer output, trimmed it, aligned it to a viral genome, and generated mapping statistics—all without installing a single bioinformatics tool on your actual computer!
+Check your local folder. You successfully took raw sequencer output, trimmed it, aligned it to a viral genome, and generated mapping statistics, all without installing a single bioinformatics tool on your actual computer!
 
 ## 5. Other Package Managers: pip and Conda
 

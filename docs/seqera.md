@@ -2,7 +2,7 @@
 
 You now know how to build custom images using a `Dockerfile`, install tools via `apt`, `pip`, or `conda`, and push them to Docker Hub. 
 
-However, building images locally takes time—especially when Conda has to solve complex dependency trees. What if you just want a container with `samtools`, `bwa`, and `multiqc` combined, and you want it *right now* without writing a Dockerfile?
+However, building images locally takes time, especially when Conda has to solve complex dependency trees. What if you just want a container with `samtools`, `bwa`, and `multiqc` combined, and you want it *right now* without writing a Dockerfile?
 
 Enter **Seqera Containers**.
 

@@ -45,5 +45,6 @@ nav:
   - Pre-built Tools Containers: prebuilt-tools.md
   - Building Custom Containers: dockerfiles.md
   - Sharing Containers: dockerhub.md
+  - Building an RNASeq Pipeline Image: rnaseq-image.md
   - Instant Custom Containers (Seqera): seqera.md
   - Workshop Wrap-up: wrapup.md
